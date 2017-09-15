@@ -8,6 +8,7 @@ import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -21,13 +22,20 @@ import myPet.PetGame;
  * it would be show up
  */
 public class NewPlayerPanel extends JPanel {
+	
+	ImageIcon start = new ImageIcon(NewPlayerPanel.class.getResource("/pics/start.png"));
+	
 	public NewPlayerPanel(){
 		Dimension size = getPreferredSize();
 		size.width = 600;
 		setPreferredSize(size);
+		setOpaque(false);
 		setBackground(new Color(3,22,52));
-		JButton startGame = new JButton("Start Game");
-		startGame.setSize(200,10);
+		JButton startGame = new JButton(start);
+		Dimension size1 = getPreferredSize();
+		size1.width = 170;
+		size1.height = 70;
+		startGame.setPreferredSize(size1);
 		startGame.setFont(new Font("courier",Font.BOLD,25));
 		startGame.setVisible(false);
 		startGame.addActionListener(new ActionListener() {

@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -22,6 +23,7 @@ public class Player3Panel extends PlayerInfoPanel {
 		public void actionPerformed(ActionEvent e) {
 			JPanel jp2 = (JPanel) PetGame.frame.getContentPane().getComponent(1);
 			jp2.setVisible(false);
+			((JComponent) jp2.getComponent(5)).setOpaque(true);
 			jp2.getComponent(3).setBackground(null);
 			jp2.getComponent(4).setBackground(null);
 			jp2.getComponent(5).setBackground(Color.GREEN);
